@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Conferma Pagamento</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Riepilogo Bollettino</h5>
+            <p><strong>Codice Bollettino:</strong> {{bollettino.codiceBollettino}}</p>
+            <p><strong>Conto Corrente:</strong> {{bollettino.cc}}</p>
+            <p><strong>Importo:</strong> {{bollettino.importo}} €</p>
+            <p><strong>Causale:</strong> {{bollettino.causale}}</p>
+            <p><strong>Nome utente:</strong> {{bollettino.nomeUtente}} {{bollettino.cognomeUtente}}</p>
+            <p><strong>Codice Carta di Credito:</strong> {{bollettino.codiceCarta}}</p>
+        </div>
+    </div>
+
+    <a routerLink="" class="btn btn-primary">Nuovo Acquisto</a>
+    <a routerLink="/pagamento/uscita" class="btn btn-secondary" style="float: right;">Uscita</a>
+</div>

@@ -1,0 +1,23 @@
+<div class="container" >
+    <h1>Pagamento Bollettino</h1>
+    <form [formGroup] = "homeform" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="codiceBollettino">Codice Bollettino</label>
+            <input type="text" id="codiceBollettino" name="codiceBollettino" formControlName="codiceBollettino" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="cc">Conto Corrente</label>
+            <input type="text" id="cc" name="cc" formControlName="cc" class="form-control" required>
+        </div>
+        <p *ngIf="!homeform.get('cc')!.valid && homeform.get('cc')?.touched" style="font-size: small; color: red;">Il conto corrente deve essere di 6 cifre </p>
+        <div class="form-group">
+            <label for="importo">Importo</label>
+            <input type="number" id="importo" name="importo" formControlName="importo" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="causale">Causale</label>
+            <input type="text" id="causale" name="causale" formControlName="causale" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!homeform.valid">Paga Bollettino</button>
+    </form>
+</div>
